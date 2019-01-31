@@ -6,7 +6,7 @@ public class Variables : MonoBehaviour {
 
 	 public static int number;
 	 public float speed;
-	 public string name;
+	 public string identity;
 
 	// Use this for initialization
         /*multi
@@ -15,11 +15,11 @@ public class Variables : MonoBehaviour {
 		dood
 		 */
 	void Start () {
-		//?number = 10;
+		// number = 10;
 		speed = 1.84f;
-		name = "Bob";
+		identity = "Bob";
 
-		print(name + " was " +number+ " years old!!" + speed);
+		print(identity + " was " +number+ " years old!!" + speed);
 	}
 	
 	// Update is called once per frame
