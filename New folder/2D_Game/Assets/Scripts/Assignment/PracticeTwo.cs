@@ -5,11 +5,11 @@ using UnityEngine;
 public class PracticeTwo : MonoBehaviour {
 public string genre;
 
-public Start() {
+void Start() {
     Library(genre);
 }
 
-Library(string book) {
+void Library(string book) {
     if ( book == "Horror") {
         StephenKing();
     }
@@ -28,19 +28,23 @@ Library(string book) {
     }
 }
 
-StephenKing() {
+void StephenKing() {
     print("Stephen King is a good place to start. Or so I hear.");
 }
 
-JRRTolkien() {
+void JRRTolkien() {
     print("Tolkien is good, Terry Pratchett too. Oh, and Christopher Paolini");
 }
 
-JohnGreen() {
+void JohnGreen() {
     print("John Green, Nicholas Spark and Joanna Flukke. Now get out of my face.");
 }
 
-Browser() {
+void OrsonCard() {
+    print( "Orson Scott Card, Garth Nix and Douglas Adams.");
+}
+
+void Browser() {
     print("Try looking around. You'll find something that'll jump out at you. Just avoid the supernatual section.");
 }
 
