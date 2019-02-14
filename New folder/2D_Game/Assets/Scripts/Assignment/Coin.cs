@@ -6,13 +6,13 @@ public class Coin : GenericPickup {
 
 	public GameObject PC;
 
-	void onTriggerEnter2D(collider2D other){
-		if(GameObject.other.name == "PC") {
-			//player collect coin
+	void OnTriggerEnter2D(Collider2D other){
+		if(other.name == "PC") {
+			//player collects coin
 		}
 
 		else{
-			//not [layer]
+			//not player]
 		}
 
 	}
