@@ -4745,6 +4745,7 @@ GameObject:
   - component: {fileID: 561422805}
   - component: {fileID: 561422804}
   - component: {fileID: 561422808}
+  - component: {fileID: 561422809}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4840,6 +4841,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weather: Foggy
+--- !u!58 &561422809
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 561422803}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &573578831
 GameObject:
   m_ObjectHideFlags: 0
@@ -5305,6 +5321,8 @@ GameObject:
   - component: {fileID: 2018641660}
   - component: {fileID: 2018641659}
   - component: {fileID: 2018641661}
+  - component: {fileID: 2018641662}
+  - component: {fileID: 2018641663}
   m_Layer: 0
   m_Name: My_First_Sprite
   m_TagString: Coin
@@ -5395,6 +5413,33 @@ MonoBehaviour:
   furColor: gray
   age: 8
   banded: 0
+--- !u!114 &2018641662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2018641658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa92bc6dd2e1d6d48854f3b499e41ed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinValue: 0
+--- !u!58 &2018641663
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2018641658}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!1 &2050055626
 GameObject:
   m_ObjectHideFlags: 0
