@@ -21,13 +21,13 @@ public class IF_Pasta : MonoBehaviour {
                 print("Pasta is ready to eat!!");
             }
         }
-        else if (pasta == "Hard" && waterBiol == false) {
+        else if (pasta == "Hard" && waterBoil == false) {
             print("Well, get your water boiling first");
         }
-        else if (pasta == "Hard" && waterBiol) {
+        else if (pasta == "Hard" && waterBoil) {
             print("Throw your noodles in!");
         }
-        else if (pasta == "Softer" && waterBiol == false) {
+        else if (pasta == "Softer" && waterBoil == false) {
             print("How in the world . . .");
         }
         else if (pasta == "Cooked" && sauce == "Red") {
@@ -48,4 +48,5 @@ public class IF_Pasta : MonoBehaviour {
         else {
             print("You don't know how to cook, do you??");
         }
+    }
 }
