@@ -113,6 +113,34 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &78087664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 78087665}
+  m_Layer: 0
+  m_Name: CheckGround
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &78087665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 78087664}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.077, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 626977557}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &414195116
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +152,7 @@ GameObject:
   - component: {fileID: 414195119}
   - component: {fileID: 414195118}
   - component: {fileID: 414195117}
+  - component: {fileID: 414195121}
   m_Layer: 0
   m_Name: Assignment Objects
   m_TagString: Coin
@@ -137,7 +166,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 414195116}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b09685cde47e2344b9a1f9cab5a984d, type: 3}
   m_Name: 
@@ -218,6 +247,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &414195121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 414195116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0722c716cc125044b97d3d1536f646b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &542715539
 GameObject:
   m_ObjectHideFlags: 0
@@ -4851,6 +4891,7 @@ GameObject:
   - component: {fileID: 561422804}
   - component: {fileID: 561422808}
   - component: {fileID: 561422809}
+  - component: {fileID: 561422810}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4945,7 +4986,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0722c716cc125044b97d3d1536f646b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weather: Foggy
 --- !u!58 &561422809
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4961,6 +5001,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &561422810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 561422803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0722c716cc125044b97d3d1536f646b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &573578831
 GameObject:
   m_ObjectHideFlags: 0
@@ -5088,7 +5139,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.59, y: -2.11, z: -0.33540052}
   m_LocalScale: {x: 3.4208, y: 3.4208, z: 3.4208}
-  m_Children: []
+  m_Children:
+  - {fileID: 78087665}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5174,8 +5226,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4da67e7387eb542a7f61d30a702382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 2
   jumpHeight: 3
+  groundCheck: {fileID: 78087665}
+  groundCheckRadius: 0.1
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &647144154
 GameObject:
   m_ObjectHideFlags: 0
@@ -5248,7 +5305,7 @@ GameObject:
   - component: {fileID: 1186311273}
   - component: {fileID: 1186311272}
   - component: {fileID: 1186311271}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5500,7 +5557,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2018641658}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 217f6b53e719e7f408f55aa8137dd809, type: 3}
   m_Name: 

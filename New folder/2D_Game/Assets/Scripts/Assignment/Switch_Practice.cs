@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Switch : MonoBehaviour {
-	public string film
+public class Switch_Practise : MonoBehaviour {
+	public string film;
 
 	// Use this for initialization
 	void Start () {
