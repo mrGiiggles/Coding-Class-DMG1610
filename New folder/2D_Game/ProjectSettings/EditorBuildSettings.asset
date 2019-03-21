@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Assignments.unity
     guid: 6a9c2c480237185409ac4bcda60c8ebd
+  - enabled: 1
+    path: Assets/Scenes/Level01.unity
+    guid: 4598ed64d707d874cb483295d9668f16
+  - enabled: 1
+    path: Assets/Scenes/Tree01.unity
+    guid: 85d9b0165afa717439c2a81589bdbead
   m_configObjects: {}
