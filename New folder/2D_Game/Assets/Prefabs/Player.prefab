@@ -85,13 +85,13 @@ Rigidbody2D:
   m_UseAutoMass: 1
   m_Mass: 0.29956794
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 1.2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &61796096507060012
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -128,8 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e4da67e7387eb542a7f61d30a702382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  jumpHeight: 3
+  moveSpeed: 3
+  jumpHeight: 10
   groundCheck: {fileID: 4599137345704560}
   groundCheckRadius: 0.1
   whatIsGround:
