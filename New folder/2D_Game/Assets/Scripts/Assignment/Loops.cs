@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Loops : MonoBehaviour {
 
-	private int bottles= 1;
-	public bool isRaining = true;
+//	private int bottles= 1;
+//	public bool isRaining = true;
 
 	// Use this for initialization
 	void Start () {

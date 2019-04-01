@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class GenericPickup : MonoBehaviour {
 
+	public bool isVisible;
+	public int value;
+	public float timer;
+	
+
 	// Use this for initialization
 	void Start () {
 		

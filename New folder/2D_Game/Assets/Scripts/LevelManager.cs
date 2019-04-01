@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour {
 	
 	//particles;
 	public GameObject deathParticle;
-	public GameObject respawnParticles;
+	public GameObject respawnParticle;
 
 	//respawn delay
 	public float respawnDelay;
@@ -28,9 +28,38 @@ public class LevelManager : MonoBehaviour {
 		player = GameObject.Find("Player");
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public void RespawnPlayer() {
+		StartCoroutine ("RespawnPlayerCo");
 	}
+	
+	public IEnumerator RespawnPlayerCo() {
+		//generate death particle
+		Instantiate (deathParticle, pcRigid.transform.position, pcRigid.transform.rotation);
+		//Hide pcRigid
+	player.SetActive(false);
+	player.GetComponent<Renderer>().enabled = false;
+	//gravity reset
+	gravityStore = pcRigid.GetComponent<Rigidbody2D>().gravityScale;
+	pcRigid.GetComponent<Rigidbody2D>().gravityScale = 0f;
+	pcRigid.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+	//Point Penalty
+	ScoreManager.AddPoints(-pointPenaltyOnDeath);
+	//debug message
+	Debug.Log ("PC Respawn");
+	//respawn delay, can't use waitforseconds in an update cycle
+	yield return new WaitForSeconds (respawnDelay);
+	//Gravity restore
+	pcRigid.GetComponent<Rigidbody2D>().gravityScale = gravityStore;
+	//Match pcRigid transform position
+	pcRigid.transform.position = currentCheckPoint.transform.position;
+	//show pcRigid
+	player.SetActive(true);
+	player.GetComponent<Renderer> ().enabled = true;
+	//Spawn pcRigid
+	Instantiate (respawnParticle, currentCheckPoint.transform.position, currentCheckPoint.transform.rotation);
+
+
+	}
+	
 }
