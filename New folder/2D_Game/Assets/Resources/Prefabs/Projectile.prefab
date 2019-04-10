@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4286568178256184}
   - component: {fileID: 212072155251580766}
   - component: {fileID: 114722280421342732}
-  - component: {fileID: 114977986447832632}
   - component: {fileID: 58463140955200980}
   - component: {fileID: 50101506471544776}
   m_Layer: 0
@@ -76,9 +75,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.06052028, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 4.578788
 --- !u!114 &114722280421342732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,37 +89,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb26034dc0c654543871ee4eeaf12205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  timeOut: 0
+  speed: 10
+  timeOut: 15
   player: {fileID: 0}
-  enemyDeath: {fileID: 0}
+  enemyDeath: {fileID: 1937719371286980, guid: 229dd1883c9e888409a7511202959412, type: 2}
   projectileParticle: {fileID: 1937719371286980, guid: 229dd1883c9e888409a7511202959412,
     type: 2}
   pointsForKill: 10
---- !u!114 &114977986447832632
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1398679403285966}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 217f6b53e719e7f408f55aa8137dd809, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 53
-  legs: 4
-  domesticated: 1
-  tail: 1
-  pointedEars: 1
-  shortHair: 1
-  declawed: 0
-  size: 2.3
-  weight: 18
-  agiglity: 1.3
-  furColor: gray
-  age: 8
-  banded: 0
 --- !u!212 &212072155251580766
 SpriteRenderer:
   m_ObjectHideFlags: 1
