@@ -13,10 +13,15 @@ public class PlayerController : MonoBehaviour {
 	public float groundCheckRadius;
 	public LayerMask whatIsGround;
 
+	// animation variable
+	public Animator animator;
+
 
 	// Use this for initialization
 	void Start () {
 		// default to true on grounded
+		animator.SetBool("isWalking", false);
+		animator.SetBool("isJumping", false);
 		
 	}
 
@@ -33,15 +38,30 @@ public class PlayerController : MonoBehaviour {
 		//moves player left & right
 		if(Input.GetKey(KeyCode.D)){
 			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+			//moveVelocity = moveSpeed;
+			animator.SetBool("isWalking", true);
 		}
-
-		else if(Input.GetKey(KeyCode.A)){
-			GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+			//jump released
+		else if (Input.GetKeyUp(KeyCode.D)){
+			animator.SetBool("isWalking", false);
 		}
 			
+		else if(Input.GetKey(KeyCode.A)){
+			GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+			//moveVelocity = moveSpeed
+			animator.SetBool("isWalking", true);
+		}
+		else if (Input.GetKeyUp(KeyCode.A)){
+			animator.SetBool("isWalking", false);
+		}
+
 			//Makes player jump
 		if(Input.GetKeyDown(KeyCode.W) && grounded){
 			Jump();
+		}
+
+		if (grounded) {
+			animator.SetBool("isJumping", false);
 		}
 
 		//player flip
@@ -55,5 +75,6 @@ public class PlayerController : MonoBehaviour {
 
 	void Jump() {
 		GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
+		animator.SetBool("isJumping", true);
 	}
 }
