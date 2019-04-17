@@ -6,12 +6,16 @@ public class PlayerController : MonoBehaviour {
 	//player movement variables
 	public float moveSpeed;
 	public float jumpHeight;
+	private bool doubleJump;
 
 	//player grounded variables
 	private bool grounded;
 	public Transform groundCheck;
 	public float groundCheckRadius;
 	public LayerMask whatIsGround;
+
+	//non slide player
+	private float moveVelocity;
 
 	// animation variable
 	public Animator animator;
@@ -20,6 +24,7 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// default to true on grounded
+		animator = GetComponent<Animator>();
 		animator.SetBool("isWalking", false);
 		animator.SetBool("isJumping", false);
 		
@@ -35,10 +40,14 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		//non-slide PLayer
+		moveVelocity = 0f;
+
 		//moves player left & right
 		if(Input.GetKey(KeyCode.D)){
-			GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-			//moveVelocity = moveSpeed;
+			// GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+			moveVelocity = moveSpeed;
 			animator.SetBool("isWalking", true);
 		}
 			//jump released
@@ -47,13 +56,15 @@ public class PlayerController : MonoBehaviour {
 		}
 			
 		else if(Input.GetKey(KeyCode.A)){
-			GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-			//moveVelocity = moveSpeed
+			// GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+			moveVelocity = -moveSpeed;
 			animator.SetBool("isWalking", true);
 		}
 		else if (Input.GetKeyUp(KeyCode.A)){
 			animator.SetBool("isWalking", false);
 		}
+
+		GetComponent<Rigidbody2D>().velocity = new Vector2(moveVelocity, GetComponent<Rigidbody2D>().velocity.y);
 
 			//Makes player jump
 		if(Input.GetKeyDown(KeyCode.W) && grounded){
@@ -61,7 +72,13 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		if (grounded) {
+			doubleJump = false;
 			animator.SetBool("isJumping", false);
+		}
+
+		if(Input.GetKeyDown (KeyCode.W)&& !doubleJump && !grounded){
+			Jump();
+			doubleJump = true;
 		}
 
 		//player flip
