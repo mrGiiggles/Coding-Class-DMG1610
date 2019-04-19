@@ -6,6 +6,7 @@ public class Teleport : MonoBehaviour {
 
 public GameObject gate;
 public GameObject player;
+public GameObject exitPoint;
 
 
 private void OnTriggerEnter2D(Collider2D col){
@@ -16,7 +17,7 @@ private void OnTriggerEnter2D(Collider2D col){
 
 IEnumerator Yeet() {
 	yield return new WaitForSeconds(1);
-	player.transform.position = new Vector2(gate.transform.position.x, gate.transform.position.y);
+	player.transform.position = new Vector2(exitPoint.transform.position.x, exitPoint.transform.position.y);
 	}
 	
 }
