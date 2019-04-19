@@ -83,9 +83,9 @@ public class PlayerController : MonoBehaviour {
 
 		//player flip
 		if (GetComponent<Rigidbody2D>().velocity.x > 0)
-			transform.localScale = new Vector3(3f, 3f, 1f);
+			transform.localScale = new Vector3(.237f, .237f, .237f);
 		else if(GetComponent<Rigidbody2D>().velocity.x < 0)
-			transform.localScale = new Vector3(-3f, 3f, 1f);
+			transform.localScale = new Vector3(-.237f, .237f, .237f);
 
 
 	}
