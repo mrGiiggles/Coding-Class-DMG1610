@@ -14,8 +14,10 @@ public class Breakable : MonoBehaviour {
 	// }
 
 	private void OnCollisionEnter2D(Collision2D col) {
-		health--;
+		if (col.gameObject.tag == "Projectile") {
+			health--;
 		GetComponent<SpriteRenderer>().sprite = sprites[health];
+		}
 		
 		//destroy game object when health is zero.
 

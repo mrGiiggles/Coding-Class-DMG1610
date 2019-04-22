@@ -6,9 +6,15 @@ public class PlayerShoot : MonoBehaviour {
 	public Transform firePoint;
 	public GameObject projectile;
 	public Animator animator;
+	//Attack type
+	public enum States {range, melee};
+	public States attackState;
 
 	// Use this for initialization
 	void Start () {
+		//Default Attack State
+		attackState = States.melee;
+
 		//load pojettile from resources/prefabs folder
 		projectile = Resources.Load("Prefabs/Projectile") as GameObject;
 		animator = GetComponent<Animator>();
