@@ -44,6 +44,12 @@ public class PlayerController : MonoBehaviour {
 		//non-slide PLayer
 		moveVelocity = 0f;
 
+
+		//when ground check collides with ground, sets isJumping as false
+		// void OnCollisionEnter2D(Collision2D col){
+		// 	if
+		// }
+
 		//moves player left & right
 		if(Input.GetKey(KeyCode.D)){
 			// GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
@@ -69,6 +75,7 @@ public class PlayerController : MonoBehaviour {
 			//Makes player jump
 		if(Input.GetKeyDown(KeyCode.W) && grounded){
 			Jump();
+			//animator.SetBool("isJumping", true);
 		}
 
 		if (grounded) {
@@ -76,9 +83,11 @@ public class PlayerController : MonoBehaviour {
 			animator.SetBool("isJumping", false);
 		}
 
-		if(Input.GetKeyDown (KeyCode.W)&& !doubleJump && !grounded){
+		if(Input.GetKey(KeyCode.W)&& !doubleJump && !grounded){
+			animator.SetBool("isJumping", true);
 			Jump();
 			doubleJump = true;
+			
 		}
 
 		//player flip
@@ -92,6 +101,6 @@ public class PlayerController : MonoBehaviour {
 
 	void Jump() {
 		GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
-		animator.SetBool("isJumping", true);
+		//animator.SetBool("isJumping", true);
 	}
 }
