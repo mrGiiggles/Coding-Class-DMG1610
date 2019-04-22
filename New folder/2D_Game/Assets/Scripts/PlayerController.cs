@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+	//Attack type
+public enum attackState {range, melee};
+
 	//player movement variables
 	public float moveSpeed;
 	public float jumpHeight;
@@ -43,12 +46,6 @@ public class PlayerController : MonoBehaviour {
 
 		//non-slide PLayer
 		moveVelocity = 0f;
-
-
-		//when ground check collides with ground, sets isJumping as false
-		// void OnCollisionEnter2D(Collision2D col){
-		// 	if
-		// }
 
 		//moves player left & right
 		if(Input.GetKey(KeyCode.D)){
