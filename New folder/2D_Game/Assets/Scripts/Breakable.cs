@@ -18,6 +18,10 @@ public class Breakable : MonoBehaviour {
 			health--;
 		GetComponent<SpriteRenderer>().sprite = sprites[health];
 		}
+		else if (col.gameObject.tag == "Ax"){
+			
+			Destroy(gameObject);
+		}
 		
 		//destroy game object when health is zero.
 

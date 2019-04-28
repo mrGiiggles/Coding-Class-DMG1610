@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Portal
   - Projectile
+  - Something
+  - Ax
   layers:
   - Default
   - TransparentFX

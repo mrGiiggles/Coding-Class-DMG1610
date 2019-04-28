@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114722280421342732}
   - component: {fileID: 58463140955200980}
   - component: {fileID: 50101506471544776}
+  - component: {fileID: 114829808008562480}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Projectile
@@ -37,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1398679403285966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.575, y: -1.415, z: 0}
-  m_LocalScale: {x: 0.016037634, y: 0.016037634, z: 0.0016037634}
+  m_LocalPosition: {x: -101.09976, y: -17.46408, z: 0}
+  m_LocalScale: {x: 0.20274863, y: 0.20274863, z: 0.020274863}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,9 +76,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.06052028, y: 0}
+  m_Offset: {x: -0.32220533, y: 0}
   serializedVersion: 2
-  m_Radius: 4.578788
+  m_Radius: 2.289229
 --- !u!114 &114722280421342732
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,13 +90,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb26034dc0c654543871ee4eeaf12205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
   timeOut: 15
   player: {fileID: 0}
   enemyDeath: {fileID: 1937719371286980, guid: 229dd1883c9e888409a7511202959412, type: 2}
   projectileParticle: {fileID: 1937719371286980, guid: 229dd1883c9e888409a7511202959412,
     type: 2}
   pointsForKill: 10
+--- !u!114 &114829808008562480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1398679403285966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb85a27d7c787b4f890e9e7db6f3a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSound: {fileID: 8300000, guid: 2df9e8701531c7145bddff9dc9eb279f, type: 3}
 --- !u!212 &212072155251580766
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -131,8 +144,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e923f1eacd8f0c94888abdce952f5445, type: 3}
-  m_Color: {r: 0.5658553, g: 0.075694196, b: 0.764151, a: 1}
+  m_Sprite: {fileID: 21300000, guid: aa396b503971588409a60862fc2a9ecb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
