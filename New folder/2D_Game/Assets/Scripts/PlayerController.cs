@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-	//Attack type
-public enum attackState {range, melee};
+	
 
 	//player movement variables
 	public float moveSpeed;

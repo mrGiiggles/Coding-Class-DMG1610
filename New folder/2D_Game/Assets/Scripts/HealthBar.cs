@@ -9,6 +9,10 @@ public class HealthBar : MonoBehaviour {
 	float maxHealth = 100f;
 	public static float health;
 
+	//start out with low health
+	void Awake() {
+		maxHealth = 10f;
+	}
 	// Use this for initialization
 	void Start () {
 		healthBar = GetComponent<Image> ();

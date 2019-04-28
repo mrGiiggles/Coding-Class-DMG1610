@@ -7,4 +7,5 @@ public class OuchScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col) {
 		HealthBar.health -= 10f;
 	}
+
 }
